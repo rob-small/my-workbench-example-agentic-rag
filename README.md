@@ -20,6 +20,7 @@
 - **Easy Mode**: Use the application
 - **Intermediate Mode**: Modify the application
 - **Advanced Mode**: Self-host gpus for inference
+- Use host.docker.internal for the IP address, no http prefix
 
 ### Prerequisites - AI Workbench and an Internet Connection
 
