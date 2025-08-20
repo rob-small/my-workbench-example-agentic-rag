@@ -4,8 +4,10 @@ Running on local URL:  http://0.0.0.0:8080
 To create a public link, set `share=True` in `launch()`.
 IMPORTANT: You are using gradio version 4.15.0, however version 4.44.1 is available, please upgrade.
 --------
+[clear] Collection 'rag-chroma' cleared.
+[clear] Removed directory: 0410491c-40fe-4049-8a38-723571c03227
 ---ROUTE QUESTION---
-How do I add an integration in the CLI?
+Tell me about Dell Accelerator workshops
 {'datasource': 'vectorstore'}
 ---ROUTE QUESTION TO RAG---
 ---RETRIEVE---
@@ -18,8 +20,10 @@ How do I add an integration in the CLI?
 ---DECISION: GENERATION IS GROUNDED IN DOCUMENTS---
 ---GRADE GENERATION vs QUESTION---
 ---DECISION: GENERATION ADDRESSES QUESTION---
+[split_documents] Splitting 1 docs with chunk size 250, overlap 0
+[embed_documents] Embedding 5 chunks using model: nvidia/nv-embedqa-e5-v5
 ---ROUTE QUESTION---
-How do I add an integration in the CLI?
+Tell me about Dell Accelerator workshops
 {'datasource': 'vectorstore'}
 ---ROUTE QUESTION TO RAG---
 ---RETRIEVE---
@@ -36,17 +40,42 @@ How do I add an integration in the CLI?
 ---GRADE GENERATION vs QUESTION---
 ---DECISION: GENERATION ADDRESSES QUESTION---
 ---ROUTE QUESTION---
-How do I fix an inaccessible remote Location?
-{'datasource': 'web_search'}
----ROUTE QUESTION TO WEB SEARCH---
----WEB SEARCH---
+Tell me about Dell Accelerator workshops
+{'datasource': 'vectorstore'}
+---ROUTE QUESTION TO RAG---
+---RETRIEVE---
+---CHECK DOCUMENT RELEVANCE TO QUESTION---
+---GRADE: DOCUMENT RELEVANT---
+---GRADE: DOCUMENT RELEVANT---
+---GRADE: DOCUMENT RELEVANT---
+---GRADE: DOCUMENT RELEVANT---
+---ASSESS GRADED DOCUMENTS---
+---DECISION: GENERATE---
+---GENERATE---
+---CHECK HALLUCINATIONS---
+---DECISION: GENERATION IS GROUNDED IN DOCUMENTS---
+---GRADE GENERATION vs QUESTION---
+---ROUTE QUESTION---
+Tell me about Dell Accelerator workshops
+{'datasource': 'vectorstore'}
+---ROUTE QUESTION TO RAG---
+---RETRIEVE---
+---CHECK DOCUMENT RELEVANCE TO QUESTION---
+---GRADE: DOCUMENT RELEVANT---
+---GRADE: DOCUMENT RELEVANT---
+---GRADE: DOCUMENT RELEVANT---
+---GRADE: DOCUMENT RELEVANT---
+---ASSESS GRADED DOCUMENTS---
+---DECISION: GENERATE---
 ---GENERATE---
 ---CHECK HALLUCINATIONS---
 ---DECISION: GENERATION IS GROUNDED IN DOCUMENTS---
 ---GRADE GENERATION vs QUESTION---
 ---DECISION: GENERATION ADDRESSES QUESTION---
+[clear] Collection 'rag-chroma' cleared.
+[clear] Removed directory: 8555f2c8-c27c-458f-9c75-a1ae922aec3b
 ---ROUTE QUESTION---
-How do I add an integration in the CLI?
+Tell me about Dell Agentic AI
 {'datasource': 'vectorstore'}
 ---ROUTE QUESTION TO RAG---
 ---RETRIEVE---
