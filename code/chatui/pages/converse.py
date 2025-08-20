@@ -183,12 +183,12 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
 
                 # Sample questions that users can click on to use
                 with gr.Row(equal_height=True):
-                    sample_query_1 = gr.Button("How do I add an integration in the CLI?", variant="secondary", size="sm", interactive=True)
-                    sample_query_2 = gr.Button("How do I fix an inaccessible remote Location?", variant="secondary", size="sm", interactive=True)
+                    sample_query_1 = gr.Button("Tell me about Dell Accelerator Workshops", variant="secondary", size="sm", interactive=True)
+                    sample_query_2 = gr.Button("Does Dell have an capabilities around Agentic AI?", variant="secondary", size="sm", interactive=True)
                 
                 with gr.Row(equal_height=True):
-                    sample_query_3 = gr.Button("What are the NVIDIA-provided default base environments?", variant="secondary", size="sm", interactive=True)
-                    sample_query_4 = gr.Button("How do I create a support bundle for troubleshooting?", variant="secondary", size="sm", interactive=True)
+                    sample_query_3 = gr.Button("Tell me about Agentic AI", variant="secondary", size="sm", interactive=True)
+                    sample_query_4 = gr.Button("What is RAG?", variant="secondary", size="sm", interactive=True)
             
             # Hidden column to be rendered when the user collapses all settings.
             with gr.Column(scale=1, min_width=100, visible=False) as hidden_settings_column:
