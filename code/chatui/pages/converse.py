@@ -76,7 +76,7 @@ from chatui.utils import compile, database, logger, gpu_compatibility
 from langgraph.graph import END, StateGraph
 
 PATH = "/"
-TITLE = "My Dell Agentic RAG: Chat UI"
+TITLE = "My Dell Agentic RAG Chat"
 OUTPUT_TOKENS = 250
 MAX_DOCS = 5
 

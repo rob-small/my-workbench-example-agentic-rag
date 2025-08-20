@@ -14,6 +14,7 @@
 # limitations under the License.
 
 # Logger class for capturing stdout 
+import datetime
 import sys
 
 class Logger:
@@ -22,9 +23,11 @@ class Logger:
         self.log = open(filename, "w")
 
     def write(self, message):
-        self.terminal.write(message)
-        self.log.write(message)
-        
+        if message.strip():  # Avoid logging empty lines
+            timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            self.terminal.write(f"[{timestamp}] {message}\n")
+            self.log.write(f"[{timestamp}] {message}\n")
+
     def flush(self):
         self.terminal.flush()
         self.log.flush()
