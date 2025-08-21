@@ -64,6 +64,8 @@ if INTERNAL_API == 'yes':
 doc_links = (
     "https://www.dell.com/en-us/blog/agentic-rag-what-s-all-the-fuss-about/",
     "https://www.dell.com/en-us/blog/unlock-the-future-of-ai-innovations-and-agentic-ai-at-ai4-2025/",
+    "https://infohub.delltechnologies.com/en-us/p/using-retrieval-augmented-generation-rag-on-a-custom-pdf-dataset-with-dell-technologies/",
+    "https://infohub.delltechnologies.com/en-us/p/enabling-open-source-agentic-apps-with-llama-stack-on-dell-ai-factory/",
 )
 EXAMPLE_LINKS_LEN = 10
 
