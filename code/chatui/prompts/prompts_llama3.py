@@ -45,7 +45,8 @@ Here is the user question: {question}
 
 generator_prompt = """
 <|begin_of_text|><|start_header_id|>system<|end_header_id|> 
-You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use five sentences maximum and keep the answer concise but helpful. 
+You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question.
+If you don't know the answer, just say that you don't know. Use five sentences maximum and keep the answer concise but helpful. 
 
 <|eot_id|><|start_header_id|>user<|end_header_id|>
 
@@ -59,7 +60,9 @@ Answer:
 
 hallucination_prompt = """
 <|begin_of_text|><|start_header_id|>system<|end_header_id|> 
-You are a grader assessing whether an answer is grounded in and supported by a set of facts. Give a binary 'yes' or 'no' score to indicate whether the answer is grounded in and supported by a set of facts. Your response format is non-negotiable: you must provide the binary score as a JSON with a single key 'score' and no preamble or explanation. 
+You are a grader assessing whether an answer is grounded in and supported by a set of facts.
+Give a binary 'yes' or 'no' score to indicate whether the answer is grounded in and supported by a set of facts.
+Your response format is non-negotiable: you must provide the binary score as a JSON with a single key 'score' and no preamble or explanation. 
 
 <|eot_id|><|start_header_id|>user<|end_header_id|>
 Here are the facts:
@@ -71,7 +74,9 @@ Here is the answer: {generation}
 
 answer_prompt = """
 <|begin_of_text|><|start_header_id|>system<|end_header_id|> 
-You are a grader assessing whether an answer is useful to resolve a question. Give a binary score 'yes' or 'no' to indicate whether the answer is useful to resolve a question. Your response format is non-negotiable: you must provide the binary score as a JSON with a single key 'score' and no preamble or explanation.
+You are a grader assessing whether an answer is useful to resolve a question.
+Give a binary score 'yes' or 'no' to indicate whether the answer is useful to resolve a question.
+Your response format is non-negotiable: you must provide the binary score as a JSON with a single key 'score' and no preamble or explanation.
 
 <|eot_id|><|start_header_id|>user<|end_header_id|> 
 Here is the answer:
