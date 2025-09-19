@@ -186,7 +186,7 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
                 # Sample questions that users can click on to use
                 with gr.Row(equal_height=True):
                     sample_query_1 = gr.Button("Tell me about Dell Accelerator Workshops", variant="secondary", size="sm", interactive=True)
-                    sample_query_2 = gr.Button("Does Dell have an capabilities around Agentic AI?", variant="secondary", size="sm", interactive=True)
+                    sample_query_2 = gr.Button("Does Dell have any capabilities around Agentic AI?", variant="secondary", size="sm", interactive=True)
                 
                 with gr.Row(equal_height=True):
                     sample_query_3 = gr.Button("Tell me about Agentic AI", variant="secondary", size="sm", interactive=True)
