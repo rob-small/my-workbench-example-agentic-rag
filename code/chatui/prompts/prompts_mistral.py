@@ -16,7 +16,8 @@
 """ These are the default prompts used by the applications for Mixtral/Mistral-based instruction models. """
 
 router_prompt = """
-<s>[INST] You are an expert at routing a user question to a vectorstore or web search. Use the vectorstore for questions related to any of the following topics: Dell, Workshops, Accelerator Workshops, Consulting, AI, Agentic AI, RAG.
+<s>[INST] You are an expert at routing a user question to a vectorstore or web search.
+Use the vectorstore for questions related to any of the following topics: New Hampshire Mutual Bancorp, NHMB, Governance, Mutuals, Mutual Banks.
 You do not need to be stringent with the keywords in the question related to these topics.
 Otherwise, use web-search. Give a binary choice 'web_search' or 'vectorstore' based on the question. Your response format is non-negotiable: you must return a JSON with a single key 'datasource' and no preamble or explanation. 
 

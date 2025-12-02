@@ -62,10 +62,10 @@ if INTERNAL_API == 'yes':
 
 # URLs for default example docs for the RAG.
 doc_links = (
-    "https://www.dell.com/en-us/blog/agentic-rag-what-s-all-the-fuss-about/",
-    "https://www.dell.com/en-us/blog/unlock-the-future-of-ai-innovations-and-agentic-ai-at-ai4-2025/",
-    "https://infohub.delltechnologies.com/en-us/p/using-retrieval-augmented-generation-rag-on-a-custom-pdf-dataset-with-dell-technologies/",
-    "https://infohub.delltechnologies.com/en-us/p/enabling-open-source-agentic-apps-with-llama-stack-on-dell-ai-factory/",
+    "https://www.nhmutual.com/why-join-nhmb/",
+    "https://www.nhmutual.com/leadership/",
+    "https://mutualsmatter.org/#why-mutuals-matter",
+    "https://www.nhmutual.com/our-affiliates/",
 )
 EXAMPLE_LINKS_LEN = 10
 
@@ -78,7 +78,7 @@ from chatui.utils import compile, database, logger, gpu_compatibility
 from langgraph.graph import END, StateGraph
 
 PATH = "/"
-TITLE = "My Dell Agentic RAG Chat"
+TITLE = "New Hampshire Mutual Bancorp - Agentic RAG Chat"
 OUTPUT_TOKENS = 250
 MAX_DOCS = 5
 
@@ -185,12 +185,12 @@ def build_page(client: chat_client.ChatClient) -> gr.Blocks:
 
                 # Sample questions that users can click on to use
                 with gr.Row(equal_height=True):
-                    sample_query_1 = gr.Button("Tell me about Dell Accelerator Workshops", variant="secondary", size="sm", interactive=True)
-                    sample_query_2 = gr.Button("Does Dell have any capabilities around Agentic AI?", variant="secondary", size="sm", interactive=True)
+                    sample_query_1 = gr.Button("What is NHMB?", variant="secondary", size="sm", interactive=True)
+                    sample_query_2 = gr.Button("Who is the NHMB president?", variant="secondary", size="sm", interactive=True)
                 
                 with gr.Row(equal_height=True):
-                    sample_query_3 = gr.Button("Tell me about Agentic AI", variant="secondary", size="sm", interactive=True)
-                    sample_query_4 = gr.Button("What is RAG?", variant="secondary", size="sm", interactive=True)
+                    sample_query_3 = gr.Button("List 3 benefits of joining NHMB", variant="secondary", size="sm", interactive=True)
+                    sample_query_4 = gr.Button("What are 2024 total assets for NHMB?", variant="secondary", size="sm", interactive=True)
             
             # Hidden column to be rendered when the user collapses all settings.
             with gr.Column(scale=1, min_width=100, visible=False) as hidden_settings_column:
