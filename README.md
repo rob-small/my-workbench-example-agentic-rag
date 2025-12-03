@@ -1,6 +1,6 @@
 # My Dell Agentic RAG
 
-This branch customizes the NVIDIA Agentic RAG sample into a Dell-focused demo that adds guided onboarding, richer observability, and optional self-hosted inference controls. The Gradio UI now walks new users through a scripted evaluation workflow, ships with Dell collateral preloaded for Retrieval-Augmented Generation (RAG), and exposes per-component prompts and deployment knobs for experimentation.
+This branch customizes the NVIDIA Agentic RAG sample into a Dell-focused demo that adds guided onboarding, richer observability, and optional self-hosted inference controls. The Gradio UI now walks new users through a scripted evaluation workflow, ships with Dell collateral preloaded for Retrieval-Augmented Generation (RAG), and exposes per-component prompts and deployment knobs for experimentation. The main window title and branding can be changed in `code/chatui/pages/converse.py` by editing the `TITLE` variable.
 
 ## What changed in this branch?
 - **Dell-flavored quickstart and sample data** – four one-click sample questions and a curated set of Dell URLs are preloaded so users can immediately compare non-RAG and RAG runs.
@@ -9,15 +9,20 @@ This branch customizes the NVIDIA Agentic RAG sample into a Dell-focused demo th
 - **Context creation workflow** – web and file upload flows embed data into a persistent Chroma store under `/project/data`, with helpers for splitting, embedding, and clearing content.
 - **Monitoring & troubleshooting** – the "Monitor" tab streams live LangGraph traces and timestamped logs captured via a lightweight logger, and friendly error messages surface common Tavily, auth, and recursion failures.
 - **Self-hosting aides** – optional GPU compatibility checks and a reference Docker Compose file help teams run their own NIM endpoints with validated model/GPU pairs.
+ - **Customizable window title** – Change the main window title by editing the `TITLE` variable in `code/chatui/pages/converse.py`.
+ - **Model name logic** – Model names (e.g., LLAMA, MISTRAL) are set in `code/chatui/pages/converse.py` and can be switched to internal endpoints using the `INTERNAL_API` environment variable.
+ - **Timestamped logging** – All logs are written with timestamps for improved traceability.
+ - **Improved error handling** – Friendly error messages for Tavily, authentication, and recursion issues are surfaced in the UI.
+ - **Agentic workflow** – The agentic RAG workflow is compiled using LangGraph, and you can generate a visual graph using the `visualize_graph()` function.
 
 ## Architecture refresher
-The agent is implemented with LangGraph. Incoming questions are routed to either Tavily web search or the Dell document vector store, retrieved passages are filtered, and candidate answers are graded for hallucinations and usefulness before being accepted or retried.
+The agent is implemented with LangGraph. Incoming questions are routed to either Tavily web search or the Dell document vector store, retrieved passages are filtered, and candidate answers are graded for hallucinations and usefulness before being accepted or retried. The workflow can be visualized and saved as an image using the built-in graph visualization tools.
 
 ### Default prompts
 Two prompt suites are bundled:
 - **Llama 3.1** prompts tuned for Dell terminology and evaluation criteria.
 - **Mixtral** equivalents for users who prefer Mistral endpoints.
-You can edit these directly in the UI accordions or by modifying the prompt modules.
+You can edit these directly in the UI accordions or by modifying the prompt modules. Model selection and prompt customization are available in the Models tab.
 
 ## Setup
 1. **Install dependencies**
@@ -37,6 +42,8 @@ You can edit these directly in the UI accordions or by modifying the prompt modu
    python -m chatui
    ```
    This starts the UI on port 8080 with the conversation page mounted at the root.
+4. **Visualize the agent workflow (optional)**
+   To generate a PNG image of the agentic workflow graph, use the `visualize_graph()` function in `code/chatui/utils/compile.py`.
 
 ## Using the app
 ### 1. Follow the Quickstart tour
@@ -64,6 +71,9 @@ Want to run everything on-prem?
 
 ## Data storage
 Embedded documents persist under `/project/data` via Chroma, so the context survives container restarts until you click **Clear Context**, which wipes the collection and associated shard files.
+
+## Logging and error handling
+All logs are written to `/project/code/output.log` with timestamps. Error messages for common issues are shown in the UI and can be customized in `chatui/utils/error_messages.py`.
 
 ## Additional resources
 Deeper customization guides live in `agentic-rag-docs/` for editing code (`intermediate-edit-code.md`) and self-hosting (`self-host.md`).
