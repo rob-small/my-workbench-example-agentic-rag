@@ -38,6 +38,16 @@ You can edit these directly in the UI accordions or by modifying the prompt modu
    ```
    This starts the UI on port 8080 with the conversation page mounted at the root.
 
+   ```
+   docker run -p 8080:8080 --env-file variables.env -v /home/dell/mycode/my-workbench-example-agentic-rag/data:/project/data chatui:latest
+   ```
+   Running in Docker
+
+   ```
+   docker build -t chatui:latest .
+   ```
+   Building in Docket
+
 ## Using the app
 ### 1. Follow the Quickstart tour
 Use the five guided steps to benchmark the preloaded sample queries with and without RAG context. Each step toggles explanatory Markdown so you can focus on one task at a time.

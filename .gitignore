@@ -58,3 +58,4 @@ data/scratch/*
 data/chroma.sqlite3
 data/
 code/output.log
+variables.env
